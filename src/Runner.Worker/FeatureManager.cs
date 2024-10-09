@@ -21,10 +21,10 @@ namespace GitHub.Runner.Worker
             else if(Constants.Runner.Platform.Equals(Constants.OSPlatform.Windows))
             {
                 var isContainerOnWindowsFeatureFlagSet = bool.TryParse(Environment.GetEnvironmentVariable(Constants.Runner.Features.AllowContainerOperationsOnWindows) ?? "false", out var b) && b;
-                if (!isContainerOnWindowsFeatureFlagSet)
-                {
-                    throw new NotSupportedException($"Container operations are not supported on Windows runners (experimental support can be enabled via '{Constants.Runner.Features.AllowContainerOperationsOnWindows}')");
-                }
+                // if (!isContainerOnWindowsFeatureFlagSet)
+                // {
+                //     throw new NotSupportedException($"Container operations are not supported on Windows runners (experimental support can be enabled via '{Constants.Runner.Features.AllowContainerOperationsOnWindows}')");
+                // }
             }
             else
             {
